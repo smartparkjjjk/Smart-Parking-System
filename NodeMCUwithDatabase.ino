@@ -10,7 +10,7 @@ const int signalPin3 = D2;  // Signal input pin 3
 const int signalPin4 = D3;  // Signal input pin 4
 const char* ssid = "EpicSeven_JP";
 const char* password = "Glitched_1234";
-const char* serverURL1 = "http://smartparkjjjk.onlinewebshop.net/store_signal.php"; // Replace with your server IP or domain
+const char* serverURL1 = "http://smartparkjjjk.onlinewebshop.net/store_signal.php"; 
 const char* serverURL2 = "http://smartparkjjjk.onlinewebshop.net/store_signal_admin.php";
 String PROJECT_API_KEY = "niggaaa";
 
@@ -32,7 +32,7 @@ void setup() {
     Serial.print(".");
   }
   Serial.println("Connected to WiFi");
-  configTime(28800, 0, "pool.ntp.org", "time.nist.gov"); // UTC+8 offset in seconds
+  configTime(28800, 0, "pool.ntp.org", "time.nist.gov"); 
 }
 
 String getCurrentTime() {
@@ -67,7 +67,7 @@ void loop() {
   // Send both states to the server
   sendDataToServer(signalState1, signalState2, signalState3, signalState4);
 
-  delay(400); // Send data every 400ms
+  delay(400);
 }
 
 void checkStateChange(int currentState, int& prevState, String& startTime, const String& signalName) {
@@ -110,8 +110,7 @@ void sendSignalStateToDatabase(const String& signalName, const String& startTime
 void sendDataToServer(int state1, int state2, int state3, int state4) {
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
-
-    // Use the newer begin method with WiFiClient instance
+    
     http.begin(client, serverURL1); // Pass WiFiClient client and server URL
 
     http.addHeader("Content-Type", "application/x-www-form-urlencoded"); // Set content type to form data
