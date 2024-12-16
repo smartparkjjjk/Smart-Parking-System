@@ -1,26 +1,26 @@
-#include <Servo.h> // Include the Servo library
+#include <Servo.h> 
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27,20,4);
 
 const int trigPin1 = 2;
 const int trigPin2 = 7;
-const int trigPin3 = 12; //
-const int trigPin4 = 16; //
+const int trigPin3 = 12; 
+const int trigPin4 = 16; 
 
 const int echoPin1 = 3;
 const int echoPin2 = 8;
-const int echoPin3 = 13; //
-const int echoPin4 = 17; //
+const int echoPin3 = 13; 
+const int echoPin4 = 17; 
 
-const int ledPin1 = 4;             // LED pin
+const int ledPin1 = 4;             
 const int ledPin2 = 9;
-const int ledPin3 = 14;             // LED pin
+const int ledPin3 = 14;           
 const int ledPin4 = 18;
 
-const int buzzerPin1 = 5;          // Buzzer pin
+const int buzzerPin1 = 5;          
 const int buzzerPin2 = 10;
-const int buzzerPin3 = 15;          // Buzzer pin
+const int buzzerPin3 = 15;          
 const int buzzerPin4 = 19;
 
 const int mcuPin1 = 31;
@@ -33,28 +33,27 @@ unsigned long triggerTime2 = 0;
 unsigned long triggerTime3 = 0;
 unsigned long triggerTime4 = 0;
 
-const unsigned long delayTime1 = 5000;  // Delay to turn on LED
+const unsigned long delayTime1 = 5000;  
 const unsigned long delayTime2 = 5000;
-const unsigned long delayTime3 = 5000;  // Delay to turn on LED
+const unsigned long delayTime3 = 5000;  
 const unsigned long delayTime4 = 5000;
 
-const unsigned long delayTimeA1 = 10000;  // Delay to turn on buzzer
+const unsigned long delayTimeA1 = 10000;  
 const unsigned long delayTimeA2 = 10000;
-const unsigned long delayTimeA3 = 10000;  // Delay to turn on buzzer
+const unsigned long delayTimeA3 = 10000; 
 const unsigned long delayTimeA4 = 10000;
 
-const int safe = 6
-;                    
+const int safe = 6;                    
 
 int IRsensorValue1 = 0;
 const int IRsensorEntrance = 33;
-Servo myServo1;           // Declare the servo object
-const int servoPin1 = 34; // Servo control pin
+Servo myServo1;           
+const int servoPin1 = 34; 
 
 int IRsensorValue2 = 0;
 const int IRsensorExit =35;
-Servo myServo2;           // Declare the servo object
-const int servoPin2 = 36; // Servo control pin
+Servo myServo2;           
+const int servoPin2 = 36; 
 
 int distanceState1 = LOW;
 int distanceState2 = LOW;
@@ -126,7 +125,7 @@ void loop() {
   long distance3 = getDistance(trigPin3, echoPin3);
   long distance4 = getDistance(trigPin4, echoPin4);
   
-   // Read the IR sensor value (digital sensor)
+  // Read the IR sensor value (digital sensor)
   IRsensorValue1 = digitalRead(IRsensorEntrance);  // Read the digital value from the IR sensor
   // Read the IR sensor value (digital sensor)
   IRsensorValue2 = digitalRead(IRsensorExit);  // Read the digital value from the IR sensor
@@ -163,19 +162,17 @@ if (distance4 < safe && distance4 > 0) {
     digitalWrite(mcuPin4, LOW);
 }
 
-
+  //SENSOR1
   if (distanceState1 == HIGH) {
     if (triggerTime1 == 0) {
       triggerTime1 = millis();
     }
-
     if (millis() - triggerTime1 >= delayTime1) {
       digitalWrite(ledPin1, HIGH);
       delay(50);
       digitalWrite(ledPin1, LOW);
       delay(50);
     }
-
     if (millis() - triggerTime1 >= delayTimeA1) {
       digitalWrite(buzzerPin1, HIGH);  // Turn on buzzer after delayTime2
     }
@@ -186,22 +183,17 @@ if (distance4 < safe && distance4 > 0) {
     digitalWrite(buzzerPin1, LOW);
   }
   
-  
-  //SENSOR2 (LIGHT BLUE)
-  
-  
+  //SENSOR2 
   if (distanceState2 == HIGH) {
     if (triggerTime2 == 0) {
       triggerTime2 = millis();
     }
-
     if (millis() - triggerTime2 >= delayTime2) {
       digitalWrite(ledPin2, HIGH);
       delay(50);
       digitalWrite(ledPin2, LOW);
       delay(50);
     }
-
     if (millis() - triggerTime2 >= delayTimeA2) {
       digitalWrite(buzzerPin2, HIGH);  // Turn on buzzer after delayTime2
     }
@@ -211,21 +203,18 @@ if (distance4 < safe && distance4 > 0) {
     digitalWrite(ledPin2, LOW);
     digitalWrite(buzzerPin2, LOW);
   }
-
-   //SENSOR3 (ORANGE)
   
+   //SENSOR3
   if (distanceState3 == HIGH) {
     if (triggerTime3 == 0) {
       triggerTime3 = millis();
     }
-
     if (millis() - triggerTime3 >= delayTime3) {
       digitalWrite(ledPin3, HIGH);
       delay(50);
       digitalWrite(ledPin3, LOW);
       delay(50);
     }
-
     if (millis() - triggerTime3 >= delayTimeA3) {
       digitalWrite(buzzerPin3, HIGH);  // Turn on buzzer after delayTime2
     }
@@ -235,22 +224,18 @@ if (distance4 < safe && distance4 > 0) {
     digitalWrite(ledPin3, LOW);
     digitalWrite(buzzerPin3, LOW);
   }
-
-
-  //SENSOR4 (GREEN)
   
+  //SENSOR4
   if (distanceState4 == HIGH) {
     if (triggerTime4 == 0) {
       triggerTime4 = millis();
     }
-
     if (millis() - triggerTime4 >= delayTime4) {
       digitalWrite(ledPin4, HIGH);
       delay(50);
       digitalWrite(ledPin4, LOW);
       delay(50);
     }
-
     if (millis() - triggerTime4 >= delayTimeA4) {
       digitalWrite(buzzerPin4, HIGH);  // Turn on buzzer after delayTime2
     }
@@ -260,10 +245,8 @@ if (distance4 < safe && distance4 > 0) {
     digitalWrite(ledPin4, LOW);
     digitalWrite(buzzerPin4, LOW);
   }
-  
   delay(10);
   
-
   Read_Sensor();
   lcd.setCursor (0,0);
   lcd.print("   Have Slot: "); 
@@ -282,7 +265,6 @@ if (distance4 < safe && distance4 > 0) {
   if(S4==1){lcd.print("S4:Fill ");}
      else{lcd.print("S4:Empty");}
 
-
 if (IRsensorValue1 == LOW) {
   if (slot > 0 && slot <= 4) { // Check if there are available slots to decrement
     myServo1.write(180); // Move servo to 90 degrees
@@ -300,19 +282,16 @@ if (IRsensorValue1 == LOW) {
 
 if (IRsensorValue2 == LOW) { // Increment slot if IRsensorValue2 is LOW
   if (slot >= 0 && slot < 4) { // Check if there is room for increment
-    myServo2.write(0); // Move servo to 90 degrees
+    myServo2.write(0); // Move servo to 0 degrees
     Serial.print("MOVING");
     delay(2000);
-    myServo2.write(90); // Move servo back to 0 degrees
+    myServo2.write(90); // Move servo back to 90 degrees
     slot = slot + 1; // Increase slot count
     delay(500);
   }
 }
-
 }
   
-
-
 
 long getDistance(int trigPin, int echoPin) {
   digitalWrite(trigPin, LOW);
@@ -320,12 +299,8 @@ long getDistance(int trigPin, int echoPin) {
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-
- 
   long duration = pulseIn(echoPin, HIGH, 30000); 
-  
   long distance = duration * 0.034 / 2;
-
   return distance;
 }
 
