@@ -1,0 +1,333 @@
+body{
+    margin: 0; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-family:"Arial";
+    background: radial-gradient(circle, rgba(128,128,128), rgba(41,41,41)); 
+}
+
+.parkSlots {
+    background-color: #39ff14;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 3px solid white;
+}
+
+
+div{
+    margin: 0px;
+    border-radius: 20px;  
+}
+
+.main-div {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.whole-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: row;
+}
+
+h1, h4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    color: white;
+}
+
+h2,h3 {
+    margin: 0;
+}
+
+.occupied{
+    display: none;
+}
+
+#counter1 {
+    color: #1b1b1b;
+}
+
+.hidden {
+    background-color: white;
+    height: 200px; 
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    overflow-y: auto; 
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.tab{
+    display: inline-block;
+    width: 100px; 
+}
+
+@media only screen and (min-width: 700px) {
+    .main-div {
+        flex-direction: row;
+    }
+
+    h1{
+        font-size: 150px;
+    }
+
+    h4{
+        font-size: 40px;
+    }
+
+    #titleMain {
+        display: inline;
+    }
+    
+    .highlight {
+        background-color: #ffa31a; 
+        padding: 0 10px; 
+        border-radius: 20px; 
+        color: #000; 
+    }
+
+    .highlight1 {
+        background-color: #ffa31a; 
+        padding: 3px 5px; 
+        border-radius: 5px; 
+        color: #000;
+        margin: 3px;
+    }
+
+    .submit{
+        font-family:"Arial";
+        font-size: 30px;
+        border: none; 
+        color: black;
+        padding: 20px 38px; 
+        cursor: pointer; 
+        background-color: #ffa31a;
+        border-radius: 10px;
+        transition: background-color .15s;
+    }
+        
+    .submit:hover{
+        background-color:rgba(255,163,26, 0.8);
+    }
+        
+    .button-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+        
+    .button-section button{
+        margin: 30px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .parkSlots{
+        width: 150px;
+        height: 150px;
+    }
+
+    h1{
+        font-size: 50px;
+    }
+
+    h4{
+        font-size: 30px;
+    }
+
+    #titleMain {
+        display: inline; 
+    }
+    
+    .highlight {
+        background-color: #ffa31a; 
+        padding: 0 3px; 
+        border-radius: 5px; 
+        color: #000; 
+    }
+
+    .highlight1 {
+        background-color: #ffa31a;
+        padding: 3px 5px;
+        border-radius: 3px; 
+        color: #000; 
+        margin: 3px;
+    }
+
+    .submit{
+        font-family:"Arial";
+        font-size: 20px;
+        border: none;
+        color: black; 
+        padding: 10px 28px; 
+        cursor: pointer; 
+        background-color: #ffa31a;
+        border-radius: 10px;
+        transition: background-color .15s;
+    }
+        
+    .submit:hover{
+        background-color:rgba(255,163,26, 0.8);
+    }
+        
+    .button-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+        
+    .button-section button{
+        margin: 20px;
+    }
+}
+
+.admin-section {
+    padding: 20px;
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+}
+
+.admin-label {
+    margin-bottom: 10px;
+}
+
+.password-container {
+    margin-bottom: 15px;
+}
+
+.error-message, .timeout-message {
+    margin-top: 10px;
+}
+
+.login-section{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+  
+.login{
+    font-family:"Arial";
+    font-size: 25px;
+    border: none; 
+    color: #1b1b1b; 
+    padding: 8px 4px 8px 4px; 
+    cursor: pointer; 
+    background-color: #ffa31a;
+    border-radius: 5px;
+    transition: background-color .15s;
+    width: 200px;
+}
+    
+.login:hover{
+    background-color:rgba(255,163,26);
+}
+
+.password{
+    padding: 8px 10px 8px 4px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+    font-family:"Arial";
+    font-size: 25px;
+    color:#1b1b1b;
+    margin-top: 15px; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+  
+.password:hover{
+    border-color: #ffa31a; 
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+    border-width: 1px;  
+    background-color: #f9f9f9; 
+}
+  
+.password:focus {
+    outline: none;
+    border-color: #ffa31a; 
+    background-color: rgba(255,255,255, .9); 
+}
+
+.styled-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+    
+.styled-table thead {
+    background-color: #ffa31a;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+    
+.styled-table th, .styled-table td {
+    padding: 12px 15px; 
+    border: 1px solid #ddd; 
+    text-align: center;
+}
+    
+.styled-table tbody tr {
+    transition: background-color 0.2s;
+}
+    
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3; 
+}
+    
+.styled-table tbody tr:hover {
+    background-color: #ffa31a; 
+    color: white;
+}
+    
+.styled-table tbody td {
+    color: #333;
+    font-weight: normal;
+}
+    
+
+@media only screen and (max-width: 700px) {
+    .styled-table {
+        font-size: 10px;
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 6px;
+    }
+}
+    

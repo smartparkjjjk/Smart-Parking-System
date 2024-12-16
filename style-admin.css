@@ -1,0 +1,236 @@
+body {
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-family:"Arial";
+    background: radial-gradient(circle, rgba(128,128,128), rgba(41,41,41)); 
+}
+
+h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    color: white;
+}
+
+.admin-section {
+    padding: 20px;
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 700px) {
+    .main-div {
+        flex-direction: row;
+    }
+
+    h1{
+        font-size: 150px;
+    }
+
+    h4{
+        font-size: 40px;
+    }
+
+    #titleMain {
+        display: inline; 
+    }
+    
+    .highlight {
+        background-color: #ffa31a; 
+        padding: 0 10px; 
+        border-radius: 20px; 
+        color: #000; 
+    }
+    .highlight1 {
+        background-color: #ffa31a; 
+        padding: 3px 5px; 
+        border-radius: 5px; 
+        color: #000; 
+        margin: 3px;
+    }
+
+    .submit{
+        font-family:"Arial";
+        font-size: 30px;
+        border: none; 
+        color: black; 
+        padding: 20px 38px; 
+        cursor: pointer; 
+        background-color: #ffa31a;
+        border-radius: 10px;
+        transition: background-color .15s;
+    }
+
+    .submit:hover{
+        background-color:rgba(255,163,26, 0.8);
+    }
+        
+    .button-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+        
+    .button-section button{
+        margin: 30px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .parkSlots{
+        width: 150px;
+        height: 150px;
+    }
+
+    h1{
+        font-size: 50px;
+    }
+
+    h4{
+        font-size: 30px;
+    }
+
+    #titleMain {
+        display: inline; 
+    }
+    
+    .highlight {
+        background-color: #ffa31a; 
+        padding: 0 3px;
+        border-radius: 5px; 
+        color: #000; 
+    }
+
+    .highlight1 {
+        background-color: #ffa31a; 
+        padding: 3px 5px; 
+        border-radius: 3px; 
+        color: #000; 
+        margin: 3px;
+    }
+    .submit{
+        font-family:"Arial";
+        font-size: 20px;
+        border: none; 
+        color: black; 
+        padding: 10px 28px; 
+        cursor: pointer; 
+        background-color: #ffa31a;
+        border-radius: 10px;
+        transition: background-color .15s;
+    }
+        
+    .submit:hover{
+        background-color:rgba(255,163,26, 0.8);
+    }
+        
+    .button-section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+        
+    .button-section button{
+        margin: 20px;
+    }
+}
+
+.styled-table {
+    width: 100%; 
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table thead {
+    background-color: #ffa31a;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px; 
+    border: 1px solid #ddd; 
+    text-align: center;
+}
+
+.styled-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3; 
+}
+
+.styled-table tbody tr:hover {
+    background-color: #ffa31a; 
+    color: white;
+}
+
+.styled-table tbody td {
+    color: #333;
+    font-weight: normal;
+}
+
+@media only screen and (max-width: 700px) {
+    .styled-table {
+        font-size: 10px;
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 6px;
+    }
+}
+
+.admin-section1 {
+    display: flex;            
+    justify-content: center;   
+    align-items: center;     
+    margin-top: 20px;         
+}
+
+.admin-background form {
+    display: flex;             
+    justify-content: center;   
+    align-items: center;       
+}
+
+.login {
+    font-family: "Arial";
+    font-size: 25px;
+    border: none;              
+    color: #1b1b1b;           
+    padding: 8px 16px;         
+    cursor: pointer;          
+    background-color: #ffa31a;
+    border-radius: 5px;
+    transition: background-color .15s;
+    width: 200px;              
+}
+
+.login:hover {
+    background-color: rgba(255, 163, 26);  
+}
+
+
+div{
+    margin: 0px;
+    border-radius: 20px;  
+}
